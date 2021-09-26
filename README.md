@@ -43,6 +43,28 @@ Download Microsoft visual studio code from https://code.visualstudio.com/ and in
 
 > We can open the earlier created project in vscode from File > Open Folder > "Browse to folder location and select it" > click open
 
+## Adding bootstrap to project
+
+run `npm install bootstrap` to add boot strap to project
+
+Add the below entries to angular.json
+
+`node_modules/bootstrap/dist/css/bootstrap.css` in the projects->architect->build->styles array,
+`node_modules/bootstrap/dist/js/bootstrap.js` in the projects->architect->build->scripts array
+
+> Restart app to see styles being added.
+
+## Adding components
+
+- To add a new component syntax is `ng generate component <<component-name>>`
+- To create a navbar component we can use
+
+```
+ng generate component navbar
+```
+
+For this example app we will create a navbar, footer, login and registration page.
+
 # Additional Information
 
 ## Development server
