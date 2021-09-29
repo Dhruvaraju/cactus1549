@@ -1,0 +1,37 @@
+<div class="container">
+  <app-navbar></app-navbar>
+  <div class="card">
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h1 class="display-4">Git Search</h1>
+      <p class="lead">
+        Enables,searching for a user with username, fetching repositories of a
+        user. Fetching files of a specific repository.<br />
+        Based on user searched
+      </p>
+    </div>
+  </div>
+  <div class="px-5 py-3 text-center">
+    <form [formGroup]="userForm" class="row gy-2 gx-3 align-items-center">
+      <div class="col-auto">
+        <label class="visually-hidden" for="autoSizingInput">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="autoSizingInput"
+          placeholder="Enter User Name"
+          formControlName="username"
+        />
+      </div>
+      <div class="col-auto">
+        <button class="btn btn-info" (click)="fetchUserDetails()">
+          User Details
+        </button>
+      </div>
+      <div class="col-auto">
+        <button class="btn btn-info" (click)="fetchUserRepos()">Repos</button>
+      </div>
+    </form>
+  </div>
+
+  <app-footer></app-footer>
+</div>
