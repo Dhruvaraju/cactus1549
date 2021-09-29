@@ -20,7 +20,7 @@
       </div>
       <div class="col-md-6">
         <label for="inputPassword4" class="form-label">Password</label>
-        <input type="password" class="form-control" id="inputPassword4" />
+        <input type="password" class="form-control" id="inputPassword4" name="pwd" ngModel />
       </div>
       <div class="col-12">
         <label for="inputAddress" class="form-label">Address</label>
@@ -29,6 +29,8 @@
           class="form-control"
           id="inputAddress"
           placeholder="1234 Main St"
+          name="address001"
+          ngModel
         />
       </div>
       <div class="col-12">
@@ -46,7 +48,7 @@
       </div>
       <div class="col-md-4">
         <label for="inputState" class="form-label">State</label>
-        <select id="inputState" class="form-select">
+        <select id="inputState" class="form-select" name="state" ngModel>
           <option selected>Choose...</option>
           <option>Andhra</option>
           <option>Tamilnadu</option>
