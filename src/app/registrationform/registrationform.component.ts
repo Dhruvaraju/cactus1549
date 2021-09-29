@@ -7,11 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrationformComponent implements OnInit {
   constructor() {}
-
+isSubmitted: boolean ;
   ngOnInit(): void {}
 
  onSubmit(formData: any) {
-    console.log('entered here');
     console.log(formData);
   }
 }
