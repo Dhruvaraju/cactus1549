@@ -43,6 +43,65 @@ Download Microsoft visual studio code from https://code.visualstudio.com/ and in
 
 > We can open the earlier created project in vscode from File > Open Folder > "Browse to folder location and select it" > click open
 
+## Adding bootstrap to project
+
+run `npm install bootstrap` to add boot strap to project
+
+Add the below entries to angular.json
+
+`node_modules/bootstrap/dist/css/bootstrap.css` in the projects->architect->build->styles array,
+`node_modules/bootstrap/dist/js/bootstrap.js` in the projects->architect->build->scripts array
+
+> Restart app to see styles being added.
+
+## Adding components
+
+- To add a new component syntax is `ng generate component <<component-name>>`
+- To create a navbar component we can use
+
+```
+ng generate component navbar
+```
+
+For this example app we will create a navbar, footer, login and registration page.
+
+> To disable strict variable initialization set the below variable to false in ts config
+>
+> ```
+> "strictPropertyInitialization": false,
+> ```
+
+## Angular forms
+
+- Template driven forms
+- Modal driven forms
+
+### Registration form
+
+- We will make use of template driven forms for creating our registration form.
+- import `FormsModule` in `app.module.ts` from `@angular/forms`.
+- For all the field that need to be included in a form place `ngModel` in its attributes.
+- `name` field is mandatory for all the fields that need to be included in form.
+- Form name is defined by using syntactic sugar `#`, we can name our form as `#registrationForm`
+- define a form using `ngForm` as the vale of the form attribute.
+
+### Login form
+
+- We will make use of modal driven forms for creating log in form.
+- import `ReactiveFormsModule` in `app.module.ts` from `@angular/forms`.
+- For all the field that need to be included in a form place `formControlName` in its attributes.
+- we need to build a form using `FormGroup`, define it as constructor variable.
+  ```
+  this.loginForm = this.formBuilder.group({
+      userName: ['',Validators.required],
+      password: ['',Validators.required]
+    })
+  ```
+- We need to mention the form group in html as below
+  ```
+  <form [formGroup]="loginForm" (ngSubmit)="loginFormSubmitted()">
+  ```
+
 # Additional Information
 
 ## Development server
